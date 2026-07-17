@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Aptiv Bookkeeping CRM — South Africa</title>
+  <!--
+    GitHub Pages SPA Routing Fix
+    When a user navigates directly to a React Router path (e.g. /members),
+    GitHub Pages returns a 404. This page redirects back to index.html with
+    the path encoded as a query parameter, then index.html restores it via JS.
+
+    Source: https://github.com/rafgraph/spa-github-pages
+  -->
+  <script>
+    var pathSegmentsToKeep = 1; // 1 = keep the repo name in the path
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body></body>
+</html>
